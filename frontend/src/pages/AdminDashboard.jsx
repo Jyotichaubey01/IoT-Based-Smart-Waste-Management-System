@@ -1558,7 +1558,7 @@ const styles = {
         padding: "15px",
         borderRadius: "8px",
         marginTop: "15px",
-        color: "#166534"
+        color: "#6d4d4d"
     },
 
     feeSummary: {
