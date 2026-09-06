@@ -1,39 +1,64 @@
-import {
-    BrowserRouter,
-    Routes,
-    Route,
-    Navigate
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-import LandingPage from "./pages/LandingPage";
-import Login from "./pages/Login";
-import StudentDashboard from "./pages/StudentDashboard";
-import AdminDashboard from "./pages/AdminDashboard";
+import StudentDashboard from "./pages/student/StudentDashboard";
+import MyRoom from "./pages/student/MyRoom";
+import Complaints from "./pages/student/Complaints";
+import Fees from "./pages/student/Fees";
+import Profile from "./pages/student/Profile";
+import Settings from "./pages/student/Settings";
+import ChangePassword from "./pages/student/ChangePassword";
 
 function App() {
     return (
         <BrowserRouter>
             <Routes>
+                {/* Default Route */}
+                <Route
+                    path="/"
+                    element={<Navigate to="/student" replace />}
+                />
 
-                <Route path="/" element={<LandingPage />} />
-
-                <Route path="/login" element={<Login />} />
-
+                {/* Student Routes */}
                 <Route
                     path="/student"
                     element={<StudentDashboard />}
                 />
 
                 <Route
-                    path="/admin"
-                    element={<AdminDashboard />}
+                    path="/student/room"
+                    element={<MyRoom />}
                 />
 
                 <Route
-                    path="*"
-                    element={<Navigate to="/" replace />}
+                    path="/student/complaints"
+                    element={<Complaints />}
                 />
 
+                <Route
+                    path="/student/fees"
+                    element={<Fees />}
+                />
+
+                <Route
+                    path="/student/profile"
+                    element={<Profile />}
+                />
+
+                <Route
+                    path="/student/settings"
+                    element={<Settings />}
+                />
+
+                <Route
+                    path="/student/change-password"
+                    element={<ChangePassword />}
+                />
+
+                {/* Unknown URL */}
+                <Route
+                    path="*"
+                    element={<Navigate to="/student" replace />}
+                />
             </Routes>
         </BrowserRouter>
     );
