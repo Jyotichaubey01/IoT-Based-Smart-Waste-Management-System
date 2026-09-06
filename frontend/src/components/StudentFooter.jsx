@@ -1,20 +1,50 @@
-
 function StudentFooter() {
+    const currentYear = new Date().getFullYear();
+
     return (
         <footer className="student-footer">
 
+            {/* Brand */}
             <div className="student-footer-brand">
-                🏠 Hostel<span>Hub</span>
+                <div className="footer-logo">
+                    🏠
+                </div>
+
+                <div>
+                    <h3>
+                        Hostel<span>Hub</span>
+                    </h3>
+
+                    <p>
+                        Smart Hostel Management System
+                    </p>
+                </div>
             </div>
 
-            <p>
-                © 2026 HostelHub. Student Portal.
-            </p>
+            {/* Copyright */}
+            <div className="student-footer-copyright">
+                <p>
+                    © {currentYear} HostelHub. All rights reserved.
+                </p>
 
+                <span>
+                    Student Portal
+                </span>
+            </div>
+
+            {/* Links */}
             <div className="student-footer-links">
-                <span>Privacy</span>
-                <span>Terms</span>
-                <span>Help</span>
+                <button onClick={() => alert("Privacy Policy")}>
+                    Privacy
+                </button>
+
+                <button onClick={() => alert("Terms & Conditions")}>
+                    Terms
+                </button>
+
+                <button onClick={() => alert("Help & Support")}>
+                    Help
+                </button>
             </div>
 
         </footer>
