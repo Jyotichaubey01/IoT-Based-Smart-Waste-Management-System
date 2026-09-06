@@ -1,9 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
-
-/* =========================================================
-   1. GLOBAL RESET & BASE STYLES
-========================================================= */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
 * {
     margin: 0;
@@ -17,456 +12,299 @@ html {
 
 body {
     font-family: "Inter", sans-serif;
-    background: #f7f8ff;
+    background: #f6f7ff;
     color: #151a2e;
 }
 
-button,
-input,
-textarea,
-select {
+button {
     font-family: inherit;
 }
 
 .landing-page {
     width: 100%;
-    min-height: 100vh;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 
-/* =========================================================
-   2. HERO SECTION
-========================================================= */
+/* =====================================================
+   HERO
+===================================================== */
 
-.hero-section {
-    min-height: 720px;
-    padding: 90px 7% 110px;
-
+.hero {
+    min-height: 100vh;
+    padding: 90px 7%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 70px;
 
-    position: relative;
-
     background:
-        radial-gradient(
-            circle at 5% 10%,
-            rgba(99, 91, 255, 0.16),
-            transparent 28%
-        ),
-        radial-gradient(
-            circle at 95% 90%,
-            rgba(72, 149, 239, 0.15),
-            transparent 30%
-        ),
-        linear-gradient(
-            135deg,
-            #f9faff 0%,
-            #f4f5ff 50%,
-            #f8fbff 100%
-        );
+        radial-gradient(circle at 10% 20%, #e2e0ff 0, transparent 30%),
+        radial-gradient(circle at 90% 80%, #dceeff 0, transparent 30%),
+        linear-gradient(135deg, #fafaff, #f1f2ff);
 }
 
-
-/* =========================================================
-   3. HERO CONTENT
-========================================================= */
-
-.hero-content {
-    max-width: 620px;
+.hero-left {
+    max-width: 630px;
 }
 
-.hero-badge {
-    display: inline-flex;
-    align-items: center;
-
-    padding: 10px 17px;
-    margin-bottom: 25px;
-
+.badge {
+    display: inline-block;
+    padding: 10px 18px;
     border-radius: 50px;
 
-    background: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(99, 91, 255, 0.15);
+    background: white;
+    color: #5c55e8;
 
-    color: #5d55e8;
+    border: 1px solid #e3e4f5;
 
     font-size: 12px;
     font-weight: 700;
 
-    box-shadow:
-        0 8px 25px rgba(55, 61, 120, 0.07);
-
-    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 25px rgba(30, 35, 80, 0.06);
 }
 
-.hero-content h1 {
-    margin-bottom: 25px;
-
-    color: #12172a;
+.hero h1 {
+    margin-top: 25px;
 
     font-size: clamp(45px, 5vw, 70px);
     line-height: 1.05;
 
     letter-spacing: -3px;
-    font-weight: 800;
+
+    color: #12172a;
 }
 
-.hero-content h1 span {
+.hero h1 span {
     display: block;
 
-    background:
-        linear-gradient(
-            100deg,
-            #5b5ff0,
-            #7555e8,
-            #487de8
-        );
+    background: linear-gradient(
+        90deg,
+        #5b5ff0,
+        #7b4fe8,
+        #4a7fea
+    );
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.hero-content > p {
-    max-width: 570px;
+.hero-left > p {
+    margin-top: 25px;
 
-    color: #697188;
+    max-width: 580px;
+
+    color: #687188;
 
     font-size: 16px;
     line-height: 1.8;
 }
 
-
-/* =========================================================
-   4. HERO FEATURES
-========================================================= */
-
-.hero-features {
+.features {
     display: flex;
     flex-wrap: wrap;
-    gap: 11px;
+    gap: 12px;
 
-    margin: 30px 0;
+    margin-top: 30px;
 }
 
-.hero-features div {
+.features span {
     padding: 10px 14px;
 
-    border-radius: 11px;
+    border-radius: 10px;
 
-    background: rgba(255, 255, 255, 0.85);
-    border: 1px solid #e7e9f5;
+    background: white;
+    border: 1px solid #e3e5f0;
 
-    color: #535c73;
-
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 600;
 
-    box-shadow:
-        0 5px 18px rgba(42, 47, 90, 0.04);
-
-    transition: 0.3s;
+    color: #535c71;
 }
 
-.hero-features div:hover {
-    transform: translateY(-3px);
-
-    border-color: #cfd1ff;
-
-    box-shadow:
-        0 10px 25px rgba(77, 75, 180, 0.08);
-}
-
-
-/* =========================================================
-   5. HERO STATISTICS
-========================================================= */
-
-.hero-stats {
+.stats {
     display: flex;
     gap: 55px;
 
     margin-top: 35px;
 }
 
-.hero-stats div {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.hero-stats strong {
-    color: #151a2d;
-
+.stats h3 {
     font-size: 28px;
-    font-weight: 800;
 }
 
-.hero-stats span {
-    color: #8a92a7;
+.stats p {
+    margin-top: 4px;
 
+    color: #8a92a6;
     font-size: 11px;
-    font-weight: 500;
 }
 
 
-/* =========================================================
-   6. DASHBOARD PREVIEW
-========================================================= */
+/* =====================================================
+   DASHBOARD
+===================================================== */
 
-.hero-visual {
+.dashboard-wrapper {
     display: flex;
     justify-content: center;
 }
 
-.dashboard-preview {
+.dashboard {
     width: 100%;
-    max-width: 550px;
+    max-width: 540px;
 
     padding: 25px;
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255, 255, 255, 0.96),
-            rgba(248, 249, 255, 0.92)
-        );
+    border-radius: 25px;
 
-    border: 1px solid #e1e4f1;
+    background: white;
 
-    border-radius: 26px;
+    border: 1px solid #e2e4ef;
 
     box-shadow:
-        0 35px 80px rgba(38, 43, 90, 0.13),
-        0 8px 20px rgba(38, 43, 90, 0.05);
+        0 30px 70px rgba(41, 46, 90, 0.13);
 
     transform: rotate(1deg);
 
-    transition:
-        transform 0.4s ease,
-        box-shadow 0.4s ease;
+    transition: 0.4s;
 }
 
-.dashboard-preview:hover {
-    transform:
-        rotate(0deg)
-        translateY(-8px);
-
-    box-shadow:
-        0 45px 90px rgba(38, 43, 90, 0.17);
+.dashboard:hover {
+    transform: rotate(0deg) translateY(-8px);
 }
 
-
-/* =========================================================
-   7. DASHBOARD HEADER
-========================================================= */
-
-.preview-top {
+.dashboard-header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 
     padding-bottom: 20px;
 
-    border-bottom: 1px solid #eceef5;
+    border-bottom: 1px solid #edf0f5;
 }
 
-.preview-top small {
-    color: #8c94a8;
+.dashboard-header small {
+    color: #8b93a6;
 
     font-size: 9px;
+    letter-spacing: 1.5px;
     font-weight: 700;
-
-    letter-spacing: 1.6px;
 }
 
-.preview-top h3 {
+.dashboard-header h3 {
     margin-top: 5px;
-
-    color: #1a2034;
-
     font-size: 19px;
 }
 
-.online-status {
+.live {
     padding: 7px 12px;
 
-    border-radius: 20px;
+    border-radius: 30px;
 
-    background: #eafaf2;
-    color: #1da45a;
+    background: #e9faf1;
+    color: #1da35b;
 
     font-size: 10px;
     font-weight: 700;
 }
 
-
-/* =========================================================
-   8. DASHBOARD WELCOME
-========================================================= */
-
-.preview-welcome {
+.welcome {
     padding: 22px 0;
 }
 
-.preview-welcome span {
-    color: #8b93a7;
-
+.welcome small {
+    color: #8d95a8;
     font-size: 11px;
 }
 
-.preview-welcome h3 {
+.welcome h3 {
     margin-top: 5px;
-
-    color: #181e32;
-
-    font-size: 22px;
+    font-size: 21px;
 }
 
-
-/* =========================================================
-   9. DASHBOARD CARDS
-========================================================= */
-
-.preview-cards {
+.dashboard-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-
     gap: 13px;
 }
 
-.preview-card {
-    display: flex;
-    align-items: center;
-    gap: 14px;
+.dashboard-card {
+    padding: 17px;
+    border-radius: 15px;
+}
+
+.dashboard-card.purple {
+    background: #f0edff;
+}
+
+.dashboard-card.blue {
+    background: #ebf4ff;
+}
+
+.dashboard-card.orange {
+    background: #fff3e8;
+}
+
+.dashboard-card.green {
+    background: #eafaf1;
+}
+
+.dashboard-card .icon {
+    font-size: 23px;
+}
+
+.dashboard-card h3 {
+    margin-top: 8px;
+    font-size: 21px;
+}
+
+.dashboard-card p {
+    margin-top: 2px;
+    color: #798297;
+    font-size: 10px;
+}
+
+.activity {
+    margin-top: 18px;
 
     padding: 17px;
 
     border-radius: 15px;
 
     background: #f8f9fd;
-    border: 1px solid #eceef5;
 
-    transition: 0.3s;
+    border: 1px solid #e9ebf2;
 }
 
-.preview-card:hover {
-    transform: translateY(-3px);
-
-    background: white;
-
-    box-shadow:
-        0 10px 25px rgba(45, 50, 100, 0.07);
-}
-
-.preview-icon {
-    width: 43px;
-    height: 43px;
-
-    display: grid;
-    place-items: center;
-
-    border-radius: 12px;
-
-    background: white;
-
-    font-size: 20px;
-
-    box-shadow:
-        0 4px 12px rgba(45, 50, 100, 0.05);
-}
-
-.preview-card strong,
-.preview-card small {
-    display: block;
-}
-
-.preview-card strong {
-    color: #1a2034;
-
-    font-size: 20px;
-    font-weight: 800;
-}
-
-.preview-card small {
-    margin-top: 3px;
-
-    color: #8a92a6;
-
-    font-size: 10px;
-}
-
-
-/* =========================================================
-   10. RECENT ACTIVITY
-========================================================= */
-
-.activity-box {
-    margin-top: 18px;
-    padding: 18px;
-
-    border-radius: 15px;
-
-    background: #f8f9fd;
-    border: 1px solid #eceef5;
-}
-
-.activity-header {
+.activity-title {
     display: flex;
-    align-items: center;
     justify-content: space-between;
 
-    margin-bottom: 14px;
+    margin-bottom: 12px;
 }
 
-.activity-header strong {
-    color: #20263a;
-
+.activity-title strong {
     font-size: 13px;
 }
 
-.activity-header span {
-    color: #635bff;
-
+.activity-title span {
+    color: #6258ed;
     font-size: 10px;
     font-weight: 700;
 }
 
-.activity-item {
+.activity-row {
     display: flex;
     align-items: center;
     gap: 10px;
 
-    padding: 11px 0;
+    padding: 12px 0;
 
-    border-top: 1px solid #e8eaf1;
+    border-top: 1px solid #e8eaf0;
 }
 
-.activity-item > div {
-    flex: 1;
-}
-
-.activity-item strong,
-.activity-item small {
-    display: block;
-}
-
-.activity-item strong {
-    color: #343a4c;
-
-    font-size: 10px;
-}
-
-.activity-item small {
-    margin-top: 3px;
-
-    color: #9299aa;
-
-    font-size: 9px;
-}
-
-.activity-dot {
+.activity-row i {
     width: 8px;
     height: 8px;
 
@@ -474,35 +312,49 @@ select {
 
     border-radius: 50%;
 
-    background: #635bff;
+    background: #655cf2;
+}
 
-    box-shadow:
-        0 0 0 4px rgba(99, 91, 255, 0.09);
+.activity-row div {
+    flex: 1;
+}
+
+.activity-row strong {
+    font-size: 10px;
+}
+
+.activity-row p {
+    margin-top: 3px;
+
+    color: #929aaa;
+    font-size: 9px;
+}
+
+.activity-row > small {
+    color: #929aaa;
+    font-size: 9px;
 }
 
 
-/* =========================================================
-   11. COMMON SECTION STYLES
-========================================================= */
+/* =====================================================
+   ROLE SECTION
+===================================================== */
 
-.services-section,
-.facilities-section {
-    padding: 110px 7%;
-
-    background: #ffffff;
+.roles-section {
+    padding: 100px 7%;
+    background: white;
 }
 
 .section-heading {
+    text-align: center;
+
     max-width: 650px;
 
     margin: 0 auto 55px;
-
-    text-align: center;
 }
 
-.section-heading > span,
-.section-label {
-    color: #635bff;
+.section-heading > span {
+    color: #6259ed;
 
     font-size: 11px;
     font-weight: 800;
@@ -511,33 +363,26 @@ select {
 }
 
 .section-heading h2 {
-    margin: 14px 0;
+    margin-top: 12px;
 
-    color: #171c30;
-
-    font-size: 44px;
-    font-weight: 800;
-
+    font-size: 43px;
     letter-spacing: -1.5px;
 }
 
 .section-heading h2 b {
-    color: #635bff;
+    color: #6259ed;
 }
 
 .section-heading p {
-    color: #7d8598;
+    margin-top: 15px;
+
+    color: #7b8498;
 
     font-size: 14px;
     line-height: 1.7;
 }
 
-
-/* =========================================================
-   12. SERVICE / ROLE CARDS
-========================================================= */
-
-.service-grid {
+.roles-container {
     max-width: 1150px;
 
     margin: auto;
@@ -548,81 +393,47 @@ select {
     gap: 24px;
 }
 
-.service-card {
-    position: relative;
-
+.role-card {
     padding: 30px;
-
-    overflow: hidden;
 
     border-radius: 22px;
 
-    background:
-        linear-gradient(
-            180deg,
-            #ffffff,
-            #fbfbff
-        );
+    background: white;
 
-    border: 1px solid #e8eaf3;
+    border: 1px solid #e4e6ef;
 
-    box-shadow:
-        0 15px 40px rgba(37, 43, 80, 0.06);
+    box-shadow: 0 15px 35px rgba(40, 45, 90, 0.05);
 
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease,
-        border-color 0.35s ease;
+    transition: 0.35s;
+
+    position: relative;
 }
 
-.service-card::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 4px;
-}
-
-.student-card::before {
-    background:
-        linear-gradient(90deg, #4f83ff, #5e5cf0);
-}
-
-.warden-card::before {
-    background:
-        linear-gradient(90deg, #7655ee, #a05cf5);
-}
-
-.admin-card::before {
-    background:
-        linear-gradient(90deg, #ee9145, #f3b34d);
-}
-
-.service-card:hover {
+.role-card:hover {
     transform: translateY(-10px);
 
-    border-color: #dddff2;
-
-    box-shadow:
-        0 28px 60px rgba(37, 43, 80, 0.12);
+    box-shadow: 0 25px 50px rgba(40, 45, 90, 0.12);
 }
 
+.role-card.student {
+    border-top: 4px solid #566cf5;
+}
 
-/* =========================================================
-   13. SERVICE CARD TOP
-========================================================= */
+.role-card.warden {
+    border-top: 4px solid #8654ed;
+}
 
-.card-top {
+.role-card.admin {
+    border-top: 4px solid #f29b45;
+}
+
+.role-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.service-icon {
+.role-icon {
     width: 58px;
     height: 58px;
 
@@ -631,27 +442,19 @@ select {
 
     border-radius: 16px;
 
-    background:
-        linear-gradient(
-            145deg,
-            #f0f1ff,
-            #f7f7ff
-        );
+    background: #f0f1ff;
 
     font-size: 27px;
-
-    box-shadow:
-        inset 0 0 0 1px rgba(99, 91, 255, 0.05);
 }
 
-.role-tag {
+.role-top span {
     padding: 7px 11px;
-
-    border-radius: 20px;
 
     background: #f5f6fa;
 
-    color: #7b8396;
+    border-radius: 20px;
+
+    color: #798195;
 
     font-size: 9px;
     font-weight: 800;
@@ -659,66 +462,48 @@ select {
     letter-spacing: 1px;
 }
 
-.service-card h3 {
-    margin-top: 25px;
-
-    color: #1a2034;
+.role-card h3 {
+    margin-top: 24px;
 
     font-size: 21px;
 }
 
-.service-card > p {
-    margin: 12px 0 20px;
+.role-card > p {
+    margin-top: 12px;
 
-    color: #7d8598;
+    color: #788196;
 
     font-size: 13px;
     line-height: 1.7;
 }
 
+.role-list {
+    margin-top: 22px;
 
-/* =========================================================
-   14. CARD FEATURES
-========================================================= */
-
-.card-features {
     display: flex;
     flex-direction: column;
     gap: 9px;
-
-    margin-bottom: 25px;
 }
 
-.card-features span {
-    color: #596276;
+.role-list div {
+    color: #565f74;
 
     font-size: 11px;
     font-weight: 600;
 }
 
-
-/* =========================================================
-   15. LOGIN BUTTON
-========================================================= */
-
-.login-btn {
+.role-card button {
     width: 100%;
 
-    padding: 14px 17px;
+    margin-top: 25px;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    padding: 14px;
 
     border: none;
-    border-radius: 12px;
 
-    background:
-        linear-gradient(
-            100deg,
-            #191e32,
-            #252a43
-        );
+    border-radius: 11px;
+
+    background: #191e34;
 
     color: white;
 
@@ -727,75 +512,52 @@ select {
 
     cursor: pointer;
 
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        background 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    transition: 0.3s;
 }
 
-.login-btn:hover {
-    background:
-        linear-gradient(
-            100deg,
-            #5b5ff0,
-            #7a51ef
-        );
-
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 10px 25px rgba(91, 95, 240, 0.25);
+.role-card button:hover {
+    background: linear-gradient(
+        90deg,
+        #5c60ef,
+        #7b51ec
+    );
 }
 
-.login-btn span:last-child {
-    font-size: 17px;
-
-    transition: transform 0.3s ease;
-}
-
-.login-btn:hover span:last-child {
-    transform: translateX(4px);
+.role-card button b {
+    font-size: 18px;
 }
 
 
-/* =========================================================
-   16. ABOUT SECTION
-========================================================= */
+/* =====================================================
+   ABOUT
+===================================================== */
 
-.about-section {
-    padding: 110px 7%;
+.about {
+    padding: 105px 7%;
 
     display: grid;
     grid-template-columns: 0.9fr 1.1fr;
 
-    gap: 100px;
-
     align-items: center;
 
-    background:
-        linear-gradient(
-            135deg,
-            #f6f7fc,
-            #f9faff
-        );
-}
+    gap: 90px;
 
-
-/* =========================================================
-   17. ABOUT VISUAL
-========================================================= */
-
-.about-visual {
-    display: flex;
-    justify-content: center;
+    background: #f6f7fc;
 }
 
 .about-box {
     width: 330px;
     height: 330px;
 
+    margin: auto;
+
     display: flex;
     flex-direction: column;
+
     align-items: center;
     justify-content: center;
 
@@ -804,42 +566,27 @@ select {
     border-radius: 35px;
 
     background:
-        radial-gradient(
-            circle at 25% 20%,
-            rgba(255,255,255,0.32),
-            transparent 30%
-        ),
+        radial-gradient(circle at 20% 15%, rgba(255,255,255,.4), transparent 30%),
         linear-gradient(
             145deg,
-            #575bf0,
-            #7650ed,
-            #487ce4
+            #5b5fee,
+            #7850ed,
+            #4c7ee8
         );
 
     color: white;
 
     box-shadow:
-        0 30px 70px rgba(83, 82, 225, 0.25);
-
-    transition: 0.4s;
+        0 30px 70px rgba(74, 81, 220, 0.25);
 }
 
-.about-box:hover {
-    transform: translateY(-8px) rotate(-1deg);
-
-    box-shadow:
-        0 40px 80px rgba(83, 82, 225, 0.3);
-}
-
-.about-big-icon {
-    margin-bottom: 20px;
-
+.home-icon {
     font-size: 65px;
+    margin-bottom: 18px;
 }
 
-.about-box h3 {
+.about-box h2 {
     font-size: 23px;
-    font-weight: 800;
 }
 
 .about-box p {
@@ -847,49 +594,45 @@ select {
 
     margin-top: 10px;
 
-    color: rgba(255,255,255,0.82);
+    color: rgba(255,255,255,.82);
 
     font-size: 12px;
     line-height: 1.6;
 }
 
-
-/* =========================================================
-   18. ABOUT CONTENT
-========================================================= */
-
-.about-content {
+.about-text {
     max-width: 600px;
 }
 
-.about-content h2 {
-    margin: 15px 0 20px;
+.about-text > span {
+    color: #6259ed;
 
-    color: #171c30;
+    font-size: 11px;
+    font-weight: 800;
 
-    font-size: 44px;
+    letter-spacing: 2px;
+}
+
+.about-text h2 {
+    margin-top: 15px;
+
+    font-size: 43px;
     line-height: 1.15;
-
-    letter-spacing: -1.5px;
 }
 
-.about-content h2 span {
+.about-text h2 b {
     display: block;
-
-    color: #635bff;
+    color: #6259ed;
 }
 
-.about-content > p {
-    color: #737c91;
+.about-text > p {
+    margin-top: 20px;
+
+    color: #737c90;
 
     font-size: 15px;
     line-height: 1.8;
 }
-
-
-/* =========================================================
-   19. ABOUT POINTS
-========================================================= */
 
 .about-points {
     margin-top: 28px;
@@ -897,49 +640,39 @@ select {
     display: grid;
     grid-template-columns: 1fr 1fr;
 
-    gap: 14px;
+    gap: 13px;
 }
 
 .about-points div {
-    padding: 13px;
-
-    border-radius: 11px;
+    padding: 14px;
 
     background: white;
 
-    border: 1px solid #e8eaf2;
+    border: 1px solid #e7e9f1;
 
-    color: #535c72;
+    border-radius: 11px;
 
     font-size: 12px;
     font-weight: 600;
-
-    box-shadow:
-        0 5px 15px rgba(45, 50, 90, 0.03);
-
-    transition: 0.3s;
-}
-
-.about-points div:hover {
-    transform: translateY(-3px);
-
-    border-color: #d9d8ff;
-
-    box-shadow:
-        0 10px 25px rgba(45, 50, 90, 0.07);
 }
 
 
-/* =========================================================
-   20. FACILITIES SECTION
-========================================================= */
+/* =====================================================
+   FACILITIES
+===================================================== */
 
-.facility-grid {
+.facilities {
+    padding: 100px 7%;
+    background: white;
+}
+
+.facility-container {
     max-width: 1100px;
 
     margin: auto;
 
     display: grid;
+
     grid-template-columns: repeat(4, 1fr);
 
     gap: 18px;
@@ -952,19 +685,11 @@ select {
 
     border-radius: 18px;
 
-    background:
-        linear-gradient(
-            145deg,
-            #fafbff,
-            #f7f8fc
-        );
+    background: #fafbff;
 
-    border: 1px solid #e8eaf2;
+    border: 1px solid #e7e9f1;
 
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        background 0.3s ease;
+    transition: 0.3s;
 }
 
 .facility:hover {
@@ -973,10 +698,10 @@ select {
     background: white;
 
     box-shadow:
-        0 18px 40px rgba(40, 45, 80, 0.09);
+        0 18px 40px rgba(40, 45, 80, 0.08);
 }
 
-.facility-icon {
+.facility > div {
     width: 55px;
     height: 55px;
 
@@ -987,25 +712,20 @@ select {
 
     border-radius: 15px;
 
-    background:
-        linear-gradient(
-            145deg,
-            #f0f1ff,
-            #f7f7ff
-        );
+    background: #eff0ff;
 
     font-size: 25px;
 }
 
 .facility h3 {
-    margin: 18px 0 8px;
-
-    color: #252b3f;
+    margin-top: 18px;
 
     font-size: 15px;
 }
 
 .facility p {
+    margin-top: 8px;
+
     color: #8991a4;
 
     font-size: 11px;
@@ -1013,33 +733,33 @@ select {
 }
 
 
-/* =========================================================
-   21. CTA SECTION
-========================================================= */
+/* =====================================================
+   CTA
+===================================================== */
 
-.cta-section {
-    padding: 105px 7%;
+.cta {
+    padding: 100px 7%;
 
     text-align: center;
 
     background:
         radial-gradient(
             circle at 50% 0%,
-            rgba(128, 117, 255, 0.25),
+            rgba(125, 111, 255, 0.28),
             transparent 35%
         ),
         linear-gradient(
             135deg,
             #151a30,
-            #201d45,
-            #181b35
+            #211e47,
+            #171a34
         );
 
     color: white;
 }
 
-.cta-content > span {
-    color: #aeb4cc;
+.cta > span {
+    color: #aeb4ca;
 
     font-size: 10px;
     font-weight: 700;
@@ -1047,132 +767,105 @@ select {
     letter-spacing: 2px;
 }
 
-.cta-section h2 {
-    margin: 20px 0 15px;
+.cta h2 {
+    margin-top: 20px;
 
-    color: white;
-
-    font-size: 46px;
-    font-weight: 800;
-
-    letter-spacing: -1.5px;
+    font-size: 45px;
 }
 
-.cta-section h2 strong {
-    display: inline;
-
-    color: #8d83ff;
+.cta h2 b {
+    color: #8d84ff;
 }
 
-.cta-section p {
-    color: #aeb3ca;
+.cta p {
+    margin-top: 15px;
+
+    color: #aeb5cc;
 
     font-size: 14px;
-    line-height: 1.7;
 }
 
 
-/* =========================================================
-   22. TABLET RESPONSIVE
-========================================================= */
+/* =====================================================
+   RESPONSIVE
+===================================================== */
 
 @media (max-width: 1000px) {
 
-    .hero-section {
+    .hero {
         grid-template-columns: 1fr;
-
         text-align: center;
-
-        padding-top: 70px;
     }
 
-    .hero-content {
+    .hero-left {
         margin: auto;
     }
 
-    .hero-features,
-    .hero-stats {
+    .features,
+    .stats {
         justify-content: center;
     }
 
-    .hero-visual {
-        margin-top: 20px;
-    }
-
-    .service-grid {
+    .roles-container {
         grid-template-columns: 1fr;
-
         max-width: 520px;
     }
 
-    .about-section {
+    .about {
         grid-template-columns: 1fr;
-
         text-align: center;
     }
 
-    .about-content {
+    .about-text {
         margin: auto;
     }
 
-    .facility-grid {
+    .about-points {
+        text-align: left;
+    }
+
+    .facility-container {
         grid-template-columns: 1fr 1fr;
     }
 }
 
 
-/* =========================================================
-   23. MOBILE RESPONSIVE
-========================================================= */
+@media (max-width: 600px) {
 
-@media (max-width: 700px) {
-
-    .hero-section {
-        min-height: auto;
-
-        padding: 65px 5% 80px;
-
-        gap: 45px;
+    .hero {
+        padding: 60px 5%;
     }
 
-    .hero-content h1 {
-        font-size: 44px;
-
-        letter-spacing: -2px;
+    .hero h1 {
+        font-size: 42px;
     }
 
-    .hero-content > p {
-        font-size: 14px;
+    .features {
+        flex-direction: column;
     }
 
-    .hero-stats {
-        gap: 28px;
+    .stats {
+        gap: 25px;
     }
 
-    .hero-stats strong {
-        font-size: 24px;
-    }
-
-    .dashboard-preview {
-        padding: 17px;
-
+    .dashboard {
         transform: none;
     }
 
-    .dashboard-preview:hover {
-        transform: translateY(-5px);
+    .dashboard-grid {
+        grid-template-columns: 1fr;
     }
 
-    .services-section,
-    .facilities-section,
-    .about-section {
+    .roles-section,
+    .about,
+    .facilities {
         padding: 75px 5%;
     }
 
     .section-heading h2,
-    .about-content h2,
-    .cta-section h2 {
-        font-size: 34px;
+    .about-text h2,
+    .cta h2 {
+        font-size: 33px;
     }
 
     .about-box {
@@ -1184,56 +877,77 @@ select {
         grid-template-columns: 1fr;
     }
 
-    .cta-section {
-        padding: 80px 5%;
+    .facility-container {
+        grid-template-columns: 1fr;
     }
 }
 
+/*===================================================*/
 
-/* =========================================================
-   24. SMALL MOBILE
-========================================================= */
+/* =====================================================
+   STUDENT FOOTER
+===================================================== */
 
-@media (max-width: 450px) {
+.student-footer {
+    min-height: 75px;
 
-    .hero-badge {
-        font-size: 10px;
-        padding: 9px 13px;
-    }
+    padding: 20px 6%;
 
-    .hero-content h1 {
-        font-size: 37px;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    .hero-features {
+    background: #11162a;
+
+    color: #9da5ba;
+
+    border-top: 1px solid #252b40;
+}
+
+.student-footer-brand {
+    color: white;
+
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.student-footer-brand span {
+    color: #766cff;
+}
+
+.student-footer p {
+    font-size: 10px;
+}
+
+.student-footer-links {
+    display: flex;
+    gap: 20px;
+
+    font-size: 10px;
+}
+
+.student-footer-links span {
+    cursor: pointer;
+}
+
+.student-footer-links span:hover {
+    color: white;
+}
+
+
+@media (max-width: 700px) {
+
+    .student-footer {
         flex-direction: column;
+
+        gap: 12px;
+
+        text-align: center;
+
+        padding: 25px 5%;
     }
 
-    .hero-features div {
-        width: 100%;
-    }
-
-    .hero-stats {
-        gap: 20px;
-    }
-
-    .hero-stats strong {
-        font-size: 21px;
-    }
-
-    .preview-cards {
-        grid-template-columns: 1fr;
-    }
-
-    .service-card {
-        padding: 24px;
-    }
-
-    .facility-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .cta-section h2 {
-        font-size: 30px;
+    .student-footer-links {
+        gap: 15px;
     }
 }

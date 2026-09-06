@@ -1,51 +1,53 @@
 
 import { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const API_URL = "http://localhost:5000";
 
-function Login() {
+function SignUp() {
+    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [role, setRole] = useState("student");
+
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
+    const [success, setSuccess] = useState("");
 
-    const handleLogin = async (e) => {
+    const handleSignUp = async (e) => {
         e.preventDefault();
 
         setError("");
+        setSuccess("");
         setLoading(true);
 
         try {
             const response = await axios.post(
-                `${API_URL}/api/auth/login`,
+                `${API_URL}/api/auth/register`,
                 {
+                    name,
                     email,
-                    password
+                    password,
+                    role
                 }
             );
 
-            const { token, user } = response.data;
+            setSuccess(
+                response.data.message || "Registration successful!"
+            );
 
-            // Save login information
-            localStorage.setItem("token", token);
-            localStorage.setItem("user", JSON.stringify(user));
-
-            alert(`Login successful! Welcome ${user.name}`);
-
-            // Temporary redirect
-            if (user.role === "admin") {
-                window.location.href = "/admin";
-            } else {
-                window.location.href = "/student";
-            }
+            setName("");
+            setEmail("");
+            setPassword("");
+            setRole("student");
 
         } catch (error) {
-            console.error("Login Error:", error);
+            console.error("Signup Error:", error);
 
             setError(
                 error.response?.data?.message ||
-                "Login failed. Please check your email and password."
+                "Registration failed. Please try again."
             );
         } finally {
             setLoading(false);
@@ -55,8 +57,14 @@ function Login() {
     return (
         <div style={styles.container}>
             <div style={styles.card}>
-                <h1>Hostel Management System</h1>
-                <h2>Login</h2>
+
+                <h1 style={styles.title}>
+                    Hostel Management System
+                </h1>
+
+                <h2 style={styles.heading}>
+                    Create Account
+                </h2>
 
                 {error && (
                     <div style={styles.error}>
@@ -64,10 +72,26 @@ function Login() {
                     </div>
                 )}
 
-                <form onSubmit={handleLogin}>
+                {success && (
+                    <div style={styles.success}>
+                        {success}
+                    </div>
+                )}
+
+                <form onSubmit={handleSignUp}>
+
+                    <input
+                        type="text"
+                        placeholder="Full Name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        required
+                        style={styles.input}
+                    />
+
                     <input
                         type="email"
-                        placeholder="Email"
+                        placeholder="Email Address"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
@@ -80,17 +104,45 @@ function Login() {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
+                        minLength={6}
                         style={styles.input}
                     />
+
+                    <select
+                        value={role}
+                        onChange={(e) => setRole(e.target.value)}
+                        style={styles.input}
+                    >
+                        <option value="student">Student</option>
+                        <option value="warden">Warden</option>
+                        <option value="admin">Admin</option>
+                    </select>
 
                     <button
                         type="submit"
                         disabled={loading}
-                        style={styles.button}
+                        style={{
+                            ...styles.button,
+                            opacity: loading ? 0.7 : 1
+                        }}
                     >
-                        {loading ? "Logging in..." : "Login"}
+                        {loading
+                            ? "Creating Account..."
+                            : "Sign Up"}
                     </button>
+
                 </form>
+
+                <p style={styles.loginText}>
+                    Already have an account?{" "}
+                    <Link
+                        to="/login"
+                        style={styles.loginLink}
+                    >
+                        Sign In
+                    </Link>
+                </p>
+
             </div>
         </div>
     );
@@ -102,7 +154,8 @@ const styles = {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        background: "#f4f6f8"
+        background: "#f4f6f8",
+        padding: "20px"
     },
 
     card: {
@@ -114,6 +167,17 @@ const styles = {
         textAlign: "center"
     },
 
+    title: {
+        marginBottom: "10px",
+        color: "#1e293b",
+        fontSize: "26px"
+    },
+
+    heading: {
+        marginBottom: "25px",
+        color: "#475569"
+    },
+
     input: {
         width: "100%",
         padding: "12px",
@@ -121,7 +185,8 @@ const styles = {
         boxSizing: "border-box",
         border: "1px solid #ccc",
         borderRadius: "5px",
-        fontSize: "16px"
+        fontSize: "16px",
+        outline: "none"
     },
 
     button: {
@@ -141,7 +206,28 @@ const styles = {
         padding: "10px",
         marginBottom: "15px",
         borderRadius: "5px"
+    },
+
+    success: {
+        background: "#dcfce7",
+        color: "#15803d",
+        padding: "10px",
+        marginBottom: "15px",
+        borderRadius: "5px"
+    },
+
+    loginText: {
+        marginTop: "20px",
+        color: "#64748b"
+    },
+
+    loginLink: {
+        color: "#2563eb",
+        fontWeight: "bold",
+        textDecoration: "none",
+        cursor: "pointer"
     }
 };
 
-export default Login;
+export default SignUp;
+
