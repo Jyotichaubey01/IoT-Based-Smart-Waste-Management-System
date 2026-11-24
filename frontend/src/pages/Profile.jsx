@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react";
-import StudentNavbar from "../../components/StudentNavbar";
+import StudentNavbar from "../components/StudentNavbar";
 
 function Profile() {
 

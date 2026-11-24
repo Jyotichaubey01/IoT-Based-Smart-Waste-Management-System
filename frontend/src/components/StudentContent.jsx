@@ -1,259 +1,291 @@
 
 function StudentContent() {
     return (
-        <main className="student-main">
+        <main className="min-h-screen w-full bg-gray-50 px-3 py-5 sm:px-5 sm:py-6 md:px-8 lg:px-10">
 
-            {/* =====================================================
-                PAGE HEADER
-            ====================================================== */}
-            <div className="student-header">
+            {/* ================= PAGE HEADER ================= */}
+            <div className="mx-auto mb-6 flex w-full max-w-[1600px] flex-col gap-4 rounded-2xl bg-white p-5 shadow-sm sm:p-6 md:flex-row md:items-center md:justify-between">
 
-                <div>
-
-                    <span className="student-label">
+                <div className="min-w-0">
+                    <span className="inline-block rounded-full bg-blue-50 px-3 py-1 text-[10px] font-bold tracking-wider text-blue-600 sm:text-xs">
                         STUDENT DASHBOARD
                     </span>
 
-                    <h1>
+                    <h1 className="mt-2 text-2xl font-bold leading-tight text-gray-900 sm:text-3xl lg:text-4xl">
                         Welcome back, Jyoti 👋
                     </h1>
 
-                    <p>
+                    <p className="mt-2 text-sm text-gray-500 sm:text-base">
                         Here's an overview of your hostel information.
                     </p>
-
                 </div>
 
-
-                <div className="current-date">
+                <div className="flex w-fit items-center rounded-xl bg-gray-50 px-4 py-3 text-xs font-medium text-gray-600 sm:text-sm">
                     📅 September 2026
                 </div>
-
             </div>
 
 
-            {/* =====================================================
-                STATISTICS
-            ====================================================== */}
-            <section className="student-stats">
+            {/* ================= STATISTICS ================= */}
+            <section className="mx-auto mb-6 grid w-full max-w-[1600px] grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
 
                 {/* Room */}
-                <div className="student-stat-card purple">
-
-                    <div className="stat-icon">
+                <div className="flex items-center gap-4 rounded-2xl bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-purple-50 text-2xl">
                         🛏️
                     </div>
 
-                    <div>
-                        <span>Room Number</span>
-                        <strong>205</strong>
-                        <small>Block A • 2nd Floor</small>
-                    </div>
+                    <div className="min-w-0">
+                        <span className="block text-xs font-medium text-gray-500">
+                            Room Number
+                        </span>
 
+                        <strong className="mt-0.5 block text-xl font-bold text-gray-900">
+                            205
+                        </strong>
+
+                        <small className="block truncate text-xs text-gray-500">
+                            Block A • 2nd Floor
+                        </small>
+                    </div>
                 </div>
 
 
                 {/* Fee */}
-                <div className="student-stat-card green">
-
-                    <div className="stat-icon">
+                <div className="flex items-center gap-4 rounded-2xl bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-green-50 text-2xl">
                         💰
                     </div>
 
-                    <div>
-                        <span>Fee Status</span>
-                        <strong>Paid</strong>
-                        <small>Next due: Oct 10, 2026</small>
-                    </div>
+                    <div className="min-w-0">
+                        <span className="block text-xs font-medium text-gray-500">
+                            Fee Status
+                        </span>
 
+                        <strong className="mt-0.5 block text-xl font-bold text-green-600">
+                            Paid
+                        </strong>
+
+                        <small className="block truncate text-xs text-gray-500">
+                            Next due: Oct 10, 2026
+                        </small>
+                    </div>
                 </div>
 
 
                 {/* Complaints */}
-                <div className="student-stat-card orange">
-
-                    <div className="stat-icon">
+                <div className="flex items-center gap-4 rounded-2xl bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-orange-50 text-2xl">
                         📝
                     </div>
 
-                    <div>
-                        <span>Complaints</span>
-                        <strong>02</strong>
-                        <small>1 resolved • 1 pending</small>
-                    </div>
+                    <div className="min-w-0">
+                        <span className="block text-xs font-medium text-gray-500">
+                            Complaints
+                        </span>
 
+                        <strong className="mt-0.5 block text-xl font-bold text-gray-900">
+                            02
+                        </strong>
+
+                        <small className="block truncate text-xs text-gray-500">
+                            1 resolved • 1 pending
+                        </small>
+                    </div>
                 </div>
 
 
                 {/* Notices */}
-                <div className="student-stat-card blue">
-
-                    <div className="stat-icon">
+                <div className="flex items-center gap-4 rounded-2xl bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-2xl">
                         📢
                     </div>
 
-                    <div>
-                        <span>New Notices</span>
-                        <strong>03</strong>
-                        <small>Updated today</small>
-                    </div>
+                    <div className="min-w-0">
+                        <span className="block text-xs font-medium text-gray-500">
+                            New Notices
+                        </span>
 
+                        <strong className="mt-0.5 block text-xl font-bold text-gray-900">
+                            03
+                        </strong>
+
+                        <small className="block truncate text-xs text-gray-500">
+                            Updated today
+                        </small>
+                    </div>
                 </div>
 
             </section>
 
 
-            {/* =====================================================
-                MAIN DASHBOARD GRID
-            ====================================================== */}
-            <section className="student-grid">
+            {/* ================= MAIN DASHBOARD GRID ================= */}
+            <section className="mx-auto grid w-full max-w-[1600px] grid-cols-1 gap-5 lg:grid-cols-2">
 
-                {/* =================================================
-                    ROOM DETAILS
-                ================================================== */}
-                <div className="student-panel room-panel">
+                {/* ================= ROOM DETAILS ================= */}
+                <div className="rounded-2xl bg-white p-5 shadow-sm sm:p-6">
 
-                    <div className="panel-heading">
-
+                    <div className="mb-6 flex items-center justify-between">
                         <div>
-                            <span>ACCOMMODATION</span>
-                            <h2>Room Details</h2>
+                            <span className="text-[10px] font-bold tracking-wider text-gray-400 sm:text-xs">
+                                ACCOMMODATION
+                            </span>
+
+                            <h2 className="mt-1 text-xl font-bold text-gray-900 sm:text-2xl">
+                                Room Details
+                            </h2>
                         </div>
 
-                        <span className="panel-icon">
+                        <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-purple-50 text-xl">
                             🛏️
+                        </div>
+                    </div>
+
+
+                    {/* Room Number */}
+                    <div className="mb-6 rounded-2xl bg-gray-50 p-5 text-center">
+                        <span className="block text-xs font-bold tracking-wider text-gray-400">
+                            ROOM
                         </span>
 
+                        <strong className="mt-1 block text-4xl font-bold text-purple-600 sm:text-5xl">
+                            205
+                        </strong>
+
+                        <small className="text-sm font-medium text-gray-500">
+                            Block A
+                        </small>
                     </div>
 
 
-                    <div className="room-number">
+                    {/* Room Information */}
+                    <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
 
-                        <span>ROOM</span>
+                        <div className="rounded-xl bg-gray-50 p-3">
+                            <span className="block text-xs text-gray-400">
+                                Floor
+                            </span>
+                            <strong className="mt-1 block text-sm text-gray-800">
+                                2nd Floor
+                            </strong>
+                        </div>
 
-                        <strong>205</strong>
+                        <div className="rounded-xl bg-gray-50 p-3">
+                            <span className="block text-xs text-gray-400">
+                                Room Type
+                            </span>
+                            <strong className="mt-1 block text-sm text-gray-800">
+                                Double Sharing
+                            </strong>
+                        </div>
 
-                        <small>Block A</small>
+                        <div className="rounded-xl bg-gray-50 p-3">
+                            <span className="block text-xs text-gray-400">
+                                Bed Number
+                            </span>
+                            <strong className="mt-1 block text-sm text-gray-800">
+                                Bed B
+                            </strong>
+                        </div>
+
+                        <div className="rounded-xl bg-gray-50 p-3">
+                            <span className="block text-xs text-gray-400">
+                                Hostel
+                            </span>
+                            <strong className="mt-1 block text-sm text-gray-800">
+                                Girls Hostel
+                            </strong>
+                        </div>
 
                     </div>
 
 
-                    <div className="room-info">
-
-                        <div>
-                            <span>Floor</span>
-                            <strong>2nd Floor</strong>
-                        </div>
-
-                        <div>
-                            <span>Room Type</span>
-                            <strong>Double Sharing</strong>
-                        </div>
-
-                        <div>
-                            <span>Bed Number</span>
-                            <strong>Bed B</strong>
-                        </div>
-
-                        <div>
-                            <span>Hostel</span>
-                            <strong>Girls Hostel</strong>
-                        </div>
-
-                    </div>
-
-
-                    <button className="outline-btn">
+                    <button
+                        type="button"
+                        className="mt-6 w-full rounded-xl border border-purple-200 px-4 py-3 text-sm font-semibold text-purple-600 transition hover:bg-purple-50"
+                    >
                         View Room Details →
                     </button>
 
                 </div>
 
 
-                {/* =================================================
-                    FEE DETAILS
-                ================================================== */}
-                <div className="student-panel fee-panel">
+                {/* ================= FEE DETAILS ================= */}
+                <div className="rounded-2xl bg-white p-5 shadow-sm sm:p-6">
 
-                    <div className="panel-heading">
-
+                    <div className="mb-6 flex items-center justify-between">
                         <div>
-                            <span>PAYMENT</span>
-                            <h2>Fee Details</h2>
+                            <span className="text-[10px] font-bold tracking-wider text-gray-400 sm:text-xs">
+                                PAYMENT
+                            </span>
+
+                            <h2 className="mt-1 text-xl font-bold text-gray-900 sm:text-2xl">
+                                Fee Details
+                            </h2>
                         </div>
 
-                        <span className="panel-icon">
+                        <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-green-50 text-xl">
                             💰
+                        </div>
+                    </div>
+
+
+                    {/* Amount */}
+                    <div className="mb-6">
+                        <span className="text-sm text-gray-500">
+                            Total Hostel Fee
                         </span>
 
-                    </div>
-
-
-                    <div className="fee-amount">
-
-                        <span>Total Hostel Fee</span>
-
-                        <strong>
+                        <strong className="mt-1 block text-3xl font-bold text-gray-900 sm:text-4xl">
                             ₹45,000
                         </strong>
-
                     </div>
 
 
-                    <div className="fee-progress">
+                    {/* Progress */}
+                    <div className="mb-6">
 
-                        <div className="progress-top">
-
-                            <span>
+                        <div className="mb-2 flex items-center justify-between">
+                            <span className="text-sm font-medium text-gray-600">
                                 Payment Progress
                             </span>
 
-                            <strong>
+                            <strong className="text-sm font-bold text-green-600">
                                 100%
                             </strong>
-
                         </div>
 
-
-                        <div className="progress-bar">
-
-                            <div className="progress-fill"></div>
-
+                        <div className="h-3 w-full overflow-hidden rounded-full bg-gray-100">
+                            <div className="h-full w-full rounded-full bg-green-500" />
                         </div>
 
-
-                        <small>
+                        <small className="mt-2 block text-xs text-gray-500">
                             All fees have been paid successfully.
                         </small>
-
                     </div>
 
 
-                    <div className="fee-summary">
+                    {/* Fee Summary */}
+                    <div className="grid grid-cols-2 gap-4">
 
-                        <div>
-
-                            <span>
+                        <div className="rounded-xl bg-green-50 p-4">
+                            <span className="block text-xs text-gray-500">
                                 Paid
                             </span>
 
-                            <strong>
+                            <strong className="mt-1 block text-lg font-bold text-green-600">
                                 ₹45,000
                             </strong>
-
                         </div>
 
-
-                        <div>
-
-                            <span>
+                        <div className="rounded-xl bg-gray-50 p-4">
+                            <span className="block text-xs text-gray-500">
                                 Pending
                             </span>
 
-                            <strong>
+                            <strong className="mt-1 block text-lg font-bold text-gray-800">
                                 ₹0
                             </strong>
-
                         </div>
 
                     </div>
@@ -261,167 +293,155 @@ function StudentContent() {
                 </div>
 
 
-                {/* =================================================
-                    RECENT NOTICES
-                ================================================== */}
-                <div className="student-panel notices-panel">
+                {/* ================= RECENT NOTICES ================= */}
+                <div className="rounded-2xl bg-white p-5 shadow-sm sm:p-6">
 
-                    <div className="panel-heading">
-
+                    <div className="mb-6 flex items-center justify-between">
                         <div>
-                            <span>ANNOUNCEMENTS</span>
-                            <h2>Recent Notices</h2>
+                            <span className="text-[10px] font-bold tracking-wider text-gray-400 sm:text-xs">
+                                ANNOUNCEMENTS
+                            </span>
+
+                            <h2 className="mt-1 text-xl font-bold text-gray-900 sm:text-2xl">
+                                Recent Notices
+                            </h2>
                         </div>
 
-                        <span className="panel-icon">
+                        <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-xl">
                             📢
-                        </span>
-
+                        </div>
                     </div>
 
 
-                    <div className="notice-item">
-
-                        <div className="notice-icon">
+                    {/* Notice 1 */}
+                    <div className="flex gap-3 border-b border-gray-100 py-4 first:pt-0">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50">
                             📅
                         </div>
 
-                        <div>
-
-                            <strong>
+                        <div className="min-w-0">
+                            <strong className="block text-sm font-semibold text-gray-800">
                                 Hostel Meeting
                             </strong>
 
-                            <p>
-                                Monthly hostel meeting will be
-                                held tomorrow at 10 AM.
+                            <p className="mt-1 text-xs leading-5 text-gray-500 sm:text-sm">
+                                Monthly hostel meeting will be held tomorrow at 10 AM.
                             </p>
 
-                            <small>
+                            <small className="mt-1 block text-xs text-gray-400">
                                 Today
                             </small>
-
                         </div>
-
                     </div>
 
 
-                    <div className="notice-item">
-
-                        <div className="notice-icon">
+                    {/* Notice 2 */}
+                    <div className="flex gap-3 border-b border-gray-100 py-4">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-orange-50">
                             🔔
                         </div>
 
-                        <div>
-
-                            <strong>
+                        <div className="min-w-0">
+                            <strong className="block text-sm font-semibold text-gray-800">
                                 Maintenance Notice
                             </strong>
 
-                            <p>
-                                Water supply maintenance on
-                                Sunday from 8 AM to 11 AM.
+                            <p className="mt-1 text-xs leading-5 text-gray-500 sm:text-sm">
+                                Water supply maintenance on Sunday from 8 AM to 11 AM.
                             </p>
 
-                            <small>
+                            <small className="mt-1 block text-xs text-gray-400">
                                 Yesterday
                             </small>
-
                         </div>
-
                     </div>
 
 
-                    <div className="notice-item">
-
-                        <div className="notice-icon">
+                    {/* Notice 3 */}
+                    <div className="flex gap-3 py-4 last:pb-0">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-purple-50">
                             📚
                         </div>
 
-                        <div>
-
-                            <strong>
+                        <div className="min-w-0">
+                            <strong className="block text-sm font-semibold text-gray-800">
                                 Study Hall Timings
                             </strong>
 
-                            <p>
-                                Study hall will remain open
-                                until 11 PM during exams.
+                            <p className="mt-1 text-xs leading-5 text-gray-500 sm:text-sm">
+                                Study hall will remain open until 11 PM during exams.
                             </p>
 
-                            <small>
+                            <small className="mt-1 block text-xs text-gray-400">
                                 2 days ago
                             </small>
-
                         </div>
-
                     </div>
 
                 </div>
 
 
-                {/* =================================================
-                    COMPLAINTS
-                ================================================== */}
-                <div className="student-panel complaint-panel">
+                {/* ================= COMPLAINTS ================= */}
+                <div className="rounded-2xl bg-white p-5 shadow-sm sm:p-6">
 
-                    <div className="panel-heading">
-
+                    <div className="mb-6 flex items-center justify-between">
                         <div>
-                            <span>SUPPORT</span>
-                            <h2>My Complaints</h2>
+                            <span className="text-[10px] font-bold tracking-wider text-gray-400 sm:text-xs">
+                                SUPPORT
+                            </span>
+
+                            <h2 className="mt-1 text-xl font-bold text-gray-900 sm:text-2xl">
+                                My Complaints
+                            </h2>
                         </div>
 
-                        <span className="panel-icon">
+                        <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-orange-50 text-xl">
                             📝
-                        </span>
-
+                        </div>
                     </div>
 
 
-                    <div className="complaint-item">
-
-                        <div>
-
-                            <strong>
+                    {/* Complaint 1 */}
+                    <div className="flex items-center justify-between gap-3 border-b border-gray-100 py-4">
+                        <div className="min-w-0">
+                            <strong className="block text-sm font-semibold text-gray-800">
                                 Water Issue
                             </strong>
 
-                            <small>
+                            <small className="text-xs text-gray-400">
                                 Room 205
                             </small>
-
                         </div>
 
-                        <span className="status pending">
+                        <span className="shrink-0 rounded-full bg-orange-50 px-3 py-1.5 text-xs font-semibold text-orange-600">
                             Pending
                         </span>
-
                     </div>
 
 
-                    <div className="complaint-item">
-
-                        <div>
-
-                            <strong>
+                    {/* Complaint 2 */}
+                    <div className="flex items-center justify-between gap-3 py-4">
+                        <div className="min-w-0">
+                            <strong className="block text-sm font-semibold text-gray-800">
                                 Fan Repair
                             </strong>
 
-                            <small>
+                            <small className="text-xs text-gray-400">
                                 Room 205
                             </small>
-
                         </div>
 
-                        <span className="status resolved">
+                        <span className="shrink-0 rounded-full bg-green-50 px-3 py-1.5 text-xs font-semibold text-green-600">
                             Resolved
                         </span>
-
                     </div>
 
 
-                    <button className="complaint-btn">
+                    {/* Submit Complaint */}
+                    <button
+                        type="button"
+                        className="mt-3 w-full rounded-xl bg-blue-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-blue-700 active:scale-[0.99]"
+                    >
                         + Submit New Complaint
                     </button>
 

@@ -1,5 +1,5 @@
 
-import StudentNavbar from "../../components/StudentNavbar";
+import StudentNavbar from "../components/StudentNavbar";
 
 function Fees() {
 

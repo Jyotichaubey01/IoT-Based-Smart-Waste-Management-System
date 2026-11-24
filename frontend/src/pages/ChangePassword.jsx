@@ -1,5 +1,5 @@
 import { useState } from "react";
-import StudentNavbar from "../../components/StudentNavbar";
+import StudentNavbar from "../components/StudentNavbar";
 
 function ChangePassword() {
     const [currentPassword, setCurrentPassword] = useState("");

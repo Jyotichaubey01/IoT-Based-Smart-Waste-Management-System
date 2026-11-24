@@ -194,7 +194,7 @@ function LandingPage() {
                         </div>
 
                         <button
-                            onClick={() => navigate("/login")}
+                            onClick={() => navigate("/login", { state: { role: "student" } })}
                         >
                             Student Login <b>→</b>
                         </button>
@@ -227,7 +227,7 @@ function LandingPage() {
                         </div>
 
                         <button
-                            onClick={() => navigate("/login")}
+                            onClick={() => navigate("/login", { state: { role: "warden" } })}
                         >
                             Warden Login <b>→</b>
                         </button>
@@ -235,34 +235,34 @@ function LandingPage() {
                     </div>
 
 
-                    {/* ADMIN */}
+                    {/* DIRECTOR / ADMIN */}
                     <div className="role-card admin">
 
                         <div className="role-top">
                             <div className="role-icon">
-                                🏫
+                                🏛️
                             </div>
 
-                            <span>ADMIN</span>
+                            <span>DIRECTOR</span>
                         </div>
 
-                        <h3>College / Admin</h3>
+                        <h3>Director & Admin</h3>
 
                         <p>
-                            Complete control over students,
-                            rooms, wardens, fees and operations.
+                            Executive hostel oversight, warden performance,
+                            occupancy analytics and audits.
                         </p>
 
                         <div className="role-list">
-                            <div>✓ Complete Control</div>
-                            <div>✓ Reports & Analytics</div>
-                            <div>✓ User Management</div>
+                            <div>✓ Executive Oversight</div>
+                            <div>✓ Warden Audits</div>
+                            <div>✓ Performance Analytics</div>
                         </div>
 
                         <button
-                            onClick={() => navigate("/login")}
+                            onClick={() => navigate("/login", { state: { role: "director" } })}
                         >
-                            Admin Login <b>→</b>
+                            Director Login <b>→</b>
                         </button>
 
                     </div>
